@@ -19,7 +19,7 @@ private:
     const std::map<std::string, float> gradePoints = {
         {"A+", 4.0}, {"A", 4.0}, {"A-", 3.75}, {"B+", 3.5}, {"B", 3.0}, {"B-", 2.75}, {"C+", 2.5}, {"C", 2.0}, {"C-", 1.75}, {"D+", 1.5}, {"D", 1.0}, {"F", 0.0}};
 
-    bool isValidGrade(std::string grade)
+    bool isValidGrade(std::string& grade)
     {
         if (grade.empty())
             return false;
@@ -40,7 +40,7 @@ private:
             throw std::invalid_argument("Invalid grade. Grade should be A-F.");
     }
 
-    void generateReportInFile(Point point)
+    void generateReportInFile(Point& point)
     {
         std::string filename = name + " - grade report.txt";
         try
@@ -83,9 +83,9 @@ private:
     }
 
 public:
-    Student(std::string name, std::string id) : name(name), id(id) {}
+    Student(std::string& name, std::string& id) : name(name), id(id) {}
 
-    void addCourse(std::string name, int credits, std::string grade)
+    void addCourse(std::string& name, int& credits, std::string& grade)
     {
         if (name.empty() || !isValidGrade(grade))
         {
