@@ -4,3 +4,5 @@
 # Ignore IDE specific files
 .vscode/
 .idea/
+#Ignore generated text files
+*.txt
