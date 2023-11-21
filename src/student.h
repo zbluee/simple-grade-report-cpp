@@ -91,8 +91,7 @@ public:
         {
             throw std::invalid_argument("Invalid course or grade.");
         }
-        Course course = {name, credits, toUpper(grade)};
-        courses.push_back(course);
+        courses.emplace_back(name, credits, toUpper(grade));
     }
 
     Point calculateGPA()
