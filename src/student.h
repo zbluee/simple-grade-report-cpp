@@ -42,7 +42,8 @@ private:
 
     void generateReportInFile(Point& point)
     {
-        std::string filename = name + " - grade report.txt";
+        std::string timestamp = getTimeNow();
+        std::string filename = getFileName(name, timestamp);
         try
         {
             std::ofstream outputFile(filename);
